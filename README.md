@@ -1,25 +1,25 @@
 # WebifyCMS Installer
 
-This repository contains the installer for WebifyCMS. It currently provides a console-based installer to set up WebifyCMS for **Testing** or **Development** environments.
+This repository contains the installer for WebifyCMS.
+It currently provides a console-based installer to set up WebifyCMS for **Testing** or **Development**.
 
 ## Prerequisites
 
 Before running the installer, ensure you have the following installed:
 
 - **Git**: Required for cloning repositories.
-- **Docker**: Required for running the application containers.
 
 ### Additional Requirements for Development Mode
-- **PHP**: Required for local dependency management.
-- **Composer**: Required for installing PHP dependencies.
+- **PHP >= 8.4**: Required for local dependency management.
+- **Composer V2**: Required for installing PHP dependencies.
 
 ## Usage
 
 1. Create a directory for the installation:
    ```bash
    # Example:
-   mkdir ~/webifycms-stack
-   cd ~/webifycms-stack
+   mkdir ~/webifycms
+   cd ~/webifycms
    ```
 
 2. Clone this installer repository:
@@ -38,21 +38,9 @@ Before running the installer, ensure you have the following installed:
    ./install.sh
    ```
 
-4. Follow the on-screen prompts to select your installation mode.
-
-## Installation Modes
-
-### 1. Development
-Designed for developers who want to contribute to WebifyCMS or its extensions.
-- Installs in the parent directory.
-- Clones the main app, core extensions and default theme (`ext-base`, `ext-admin`, `ext-user`, `ext-site`, `theme-green`) into separate directories.
-- Configures the environment for development (`APP_ENVIRONMENT=dev`, `APP_DEBUG=true`, `APP_COOKIE_VALIDATION_KEY=<random>`).
-- Runs `composer install` to set up PHP dependencies.
-- Starts Docker containers.
-- **URL**: `http://localhost:<NGINX_PORT>` (Port defined in `.env`)
+5. Follow the on-screen prompts to continue the installation.
 
 ## Troubleshooting
 
 - **Permission Denied**: Ensure you have run `chmod +x install.sh`.
 - **Missing Dependencies**: The script will check for required tools. Install any missing tools as prompted.
-- **Docker Issues**: Ensure the Docker daemon is running before starting the installer.
