@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# The file is part of the "webifycms/installer", WebifyCMS installer package.
+#
+# @see https://webifycms.com
+
+# @copyright Copyright (c) 2023 - Present WebifyCMS
+# @license https://webifycms.com/license
+# @author Mohammed Shifreen <mshifreen@gmail.com>
+
+# =================================================
+
 # WebifyCMS Installer Script
 
 set -e
@@ -109,6 +119,7 @@ install_development() {
         info "Creating composer.local.json..."
         cp "$app_dir/composer.json" "$app_dir/composer.local.json"
 
+        # shellcheck disable=SC2016
         php -r '
             $path = $argv[1];
             $json = json_decode(file_get_contents($path), true);
